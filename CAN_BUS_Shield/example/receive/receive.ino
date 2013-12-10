@@ -10,9 +10,10 @@ INT8U buf[8];
 char str[20];
 void setup()
 {
-  CAN.begin(CAN_500KBPS);                   // init can bus : baudrate = 500k
-  attachInterrupt(0, MCP2515_ISR, FALLING); // start interrupt
-  Serial.begin(115200);
+    Serial.begin(115200);
+    CAN.begin(CAN_500KBPS);                   // init can bus : baudrate = 500k
+    attachInterrupt(0, MCP2515_ISR, FALLING); // start interrupt
+  
 }
 
 void MCP2515_ISR()
